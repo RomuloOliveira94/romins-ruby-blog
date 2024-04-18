@@ -12,4 +12,16 @@
 </ul>
 
 
+<h2>Comentários</h2>
+
+<% if @article.comments.any? %>
+    <%= render @article.comments %>
+<% else %>
+    <p>Nenhum comentário...</p>
+<% end %>
+
+<h2>Adicionar Comentário</h2>
+<%= render "comments/form" %>
+
+
 <%= link_to "Voltar", articles_path %>
