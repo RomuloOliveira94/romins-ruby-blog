@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
   <head>
-    <title>RominBlog</title>
+    <title>Romin Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "pages/header" %>
+    <main class="container mx-auto">
+      <%= yield %>
+    </main>
+    <%= render "pages/footer" %>
   </body>
 </html>
