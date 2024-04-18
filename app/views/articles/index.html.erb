@@ -1,0 +1,9 @@
+<h1>Bem vindo ao Romin Blog!</h1>
+
+<ul>
+    <% @articles.each do |article| %>
+      <a href="/articles/<%= article.id %>">
+        <%= article.title %>
+      </a>
+    <% end %>
+</ul>
