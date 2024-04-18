@@ -2,8 +2,14 @@
 
 <ul>
     <% @articles.each do |article| %>
-      <a href="/articles/<%= article.id %>">
-        <%= article.title %>
-      </a>
+      <li>     
+          <%= link_to article.title, article %>
+          -
+          <%= link_to "Editar", edit_article_path(article) %>
+      </li>
     <% end %>
+
 </ul>
+
+<h2>Criar novo Artigo</h2>    
+<%= link_to "New Article", new_article_path %>
