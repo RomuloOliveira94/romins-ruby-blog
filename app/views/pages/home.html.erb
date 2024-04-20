@@ -1,10 +1,19 @@
 
-<section class="min-h-[80vh] flex flex-col gap-3 py-3">
-    <h1 class="text-3xl font-bold">Bem vindo ao Romin Blog!</h1>
-    <h2 class="text-xl font-semibold">
-  Nosso blog tem <%= Article.public_count %> artigos e contando!
-    </h2>
-
+<section class="min-h-[80vh] flex flex-col gap-3 py-3 items-center justifi-center">
+    <h1 class="text-3xl font-bold">Welcome to Romin Phrases</h1>
+    <h2 class="text-xl font-semibold">Our site has <%= Article.public_count %> phrases.</h2>
+    <h3 class="text-lg font-semibold">Last phrases</h3>
+    <ul>
+      <% @articles.each do |article| %>
+        <% unless article.archived? %>
+          <li>     
+              <%= link_to article.title, article %>
+              <hr>         
+           </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= paginate @articles %>
 </section>
 
 

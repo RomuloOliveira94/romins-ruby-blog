@@ -1,17 +1,13 @@
-<%= form_with model: [@article, @article.comments.build] do |form| %>
-  <p>
-    <%= form.label "Nome" %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label "Comentário" %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
-  </p>
-  <p>
-    <%= form.submit "Comentar" %>
-  </p>
-<% end %>
+  <%= form_with model: [@article, @article.comments.build] do |form|%>
+    <p>
+      <%= form.label "Name", class: "font-semibold text-md" %><br>
+      <%= form.text_field :commenter, class: "input input-bordered w-full max-w-xs", placeholder: "name" %>
+    </p>
+    <p class="mt-2">
+      <%= form.label "Comment", class: "font-semibold text-md mb-3" %><br>
+      <%= form.text_area :body, class: "textarea textarea-bordered h-24 w-full max-w-xs", placeholder: "comment here" %>
+    </p>
+    <p class="mt-2">
+      <%= form.submit "Comment", class: "btn btn-success w-full max-w-xs" %>
+    </p>
+  <% end %>

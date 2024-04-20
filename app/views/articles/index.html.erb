@@ -1,16 +1,20 @@
-<section class="min-h-[80vh]">
-  <ul>
-      <% @articles.each do |article| %>
-        <% unless article.archived? %>
-          <li>     
-              <%= link_to article.title, article %>
-              -
-              <%= link_to "Editar", edit_article_path(article) %>
-          </li>
+<section class="flex gap-20 pt-5 items-center justify-center">
+  <div class="grid gap-5">
+    <h1 class="text-2xl font-bold">All phrases</h1>
+    <ul class="grid gap-2 text-md">
+        <% @articles.each do |article| %>
+          <% unless article.archived? %>
+            <li>     
+                <%= link_to article.title, article %>
+                -
+                <%= link_to "Edit", edit_article_path(article), class: "link" %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
-
-  </ul>
-  <h2>Criar novo Artigo</h2>    
-  <%= link_to "New Article", new_article_path %>
+    </ul>
+  </div>
+  <div class="grid gap-2">
+    <h2 class="text-xl font-semibold">Create new phrase</h2>    
+    <%= link_to "New Phrase", new_article_path, class: "btn btn-error" %>
+  </div>
 </section>

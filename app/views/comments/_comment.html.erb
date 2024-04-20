@@ -1,13 +1,14 @@
-<% unless comment.archived? %>
-    <p>
-        <strong><%= comment.commenter %></strong>:<br>
-        <%= comment.body %>
-    </p>
-    <p>
-        <%= link_to "deletar", [comment.article, comment], data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Tem certeza?"
-                    } 
-        %>
-    </p>
-<% end %>
+<section class="flex justify-between items-center gap-3">    
+        <p class="text-start">
+            <strong class="text-md"><%= comment.commenter %></strong> says:<br>
+            <span class="font-light text-md"><%= comment.body %></span>
+        </p>
+        <p>
+            <%= link_to "x", [comment.article, comment], data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Tem certeza?"
+                        }, class: "bg-red-500 p-2 h-6 w-6 rounded-full text-center text-black font-bold" 
+            %>
+        </p>
+</section>
+<hr>

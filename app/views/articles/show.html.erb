@@ -1,27 +1,40 @@
-<h1><%= @article.title %></h1>
+<section class="grid gap-5 items-center justify-center pt-8">
+ <%= link_to "< Voltar", articles_path, class: "font-bold text-xl link" %>
+ <div class="grid gap-5 border border-slate-300 p-16 rounded-md">
+  <h1 class="font-bold text-2xl"><%= @article.title %></h1>
 
-<h1><%= @article.body %></h1>
+  <h2 class="font-semibold text-xl">"<%= @article.body %>"</h2>
+ </div> 
 
-
-<ul>
-  <li><%= link_to "Editar", edit_article_path(@article) %></li>
-  <li><%= link_to "Deletar", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
-
-
-<h2>Comentários</h2>
-
-<% if @article.comments.any? %>
-    <%= render @article.comments %>
-<% else %>
-    <p>Nenhum comentário...</p>
-<% end %>
-
-<h2>Adicionar Comentário</h2>
-<%= render "comments/form" %>
+<div class="grid gap-1 font-light text-md">
+  <p class="text-sm">Created at <%= @article.created_at.strftime("%d/%m/%Y") %></p>
+  <p class="text-sm">Updated at <%= @article.updated_at.strftime("%d/%m/%Y") %></p>
+</div>
 
 
-<%= link_to "Voltar", articles_path %>
+<div class="grid gap-2">
+  <h2 class="text-xl font-bold">Comments</h2>
+  <% if @article.comments.any? %>
+      <%= render @article.comments %>
+  <% else %>
+      <p>Nenhum comentário...</p>
+  <% end %>
+</div>
+
+<div class="grid gap-2">
+  <h2 class="text-lg font-semibold">Add Comment</h2>
+  <%= render "comments/form" %>
+</div>
+
+<div class="flex justify-between items-center pb-5">
+  <%= link_to "Voltar", articles_path, class: "font-bold text-xl link text-center" %>
+  <ul class="flex gap-3">
+    <li><%= link_to "Editar", edit_article_path(@article), class: "link link-info" %></li>
+    <li><%= link_to "Deletar", article_path(@article), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }, class: "link link-error" %></li>
+  </ul>
+</div>
+
+</section>
