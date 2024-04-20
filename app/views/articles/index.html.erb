@@ -5,7 +5,7 @@
         <% @articles.each do |article| %>
           <% unless article.archived? %>
             <li>     
-                <%= link_to article.title, article %>
+                <%= link_to article.title, article, class: "link" %>
                 -
                 <%= link_to "Edit", edit_article_path(article), class: "link" %>
             </li>

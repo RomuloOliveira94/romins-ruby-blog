@@ -3,11 +3,11 @@
             <strong class="text-md"><%= comment.commenter %></strong> says:<br>
             <span class="font-light text-md"><%= comment.body %></span>
         </p>
-        <p>
+        <p class="bg-red-500 h-7 w-7 rounded-full text-center text-black font-bold flex items-center justify-center">
             <%= link_to "x", [comment.article, comment], data: {
                         turbo_method: :delete,
-                        turbo_confirm: "Tem certeza?"
-                        }, class: "bg-red-500 p-2 h-6 w-6 rounded-full text-center text-black font-bold" 
+                        turbo_confirm: "Are you sure?"
+                        }, class: "self-center"
             %>
         </p>
 </section>

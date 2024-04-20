@@ -7,13 +7,13 @@
       <% @articles.each do |article| %>
         <% unless article.archived? %>
           <li>     
-              <%= link_to article.title, article %>
+              <%= link_to article.title, article, class: "link link-hover" %>
               <hr>         
            </li>
         <% end %>
       <% end %>
     </ul>
-    <%= paginate @articles %>
+      <%= paginate @articles, class: "flex items-center justify-between" %>
 </section>
 
 
