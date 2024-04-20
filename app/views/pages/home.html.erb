@@ -1,19 +1,19 @@
 
 <section class="min-h-[80vh] flex flex-col gap-3 py-3 items-center justifi-center">
     <h1 class="text-3xl font-bold">Welcome to Romin Phrases 💡📝</h1>
-    <h2 class="text-xl font-semibold">Our site has <%= Article.public_count %> phrases.</h2>
+    <h2 class="text-xl font-semibold">Our site has <%= Phrase.public_count %> phrases.</h2>
     <h3 class="text-lg font-semibold">Last phrases</h3>
     <ul>
-      <% @articles.each do |article| %>
-        <% unless article.archived? %>
+      <% @phrases.each do |phrase| %>
+        <% unless phrase.archived? %>
           <li>     
-              <%= link_to article.title, article, class: "link link-hover" %>
+              <%= link_to phrase.title, phrase, class: "link link-hover" %>
               <hr>         
            </li>
         <% end %>
       <% end %>
     </ul>
-      <%= paginate @articles, class: "flex items-center justify-between" %>
+      <%= paginate @phrases, class: "flex items-center justify-between" %>
 </section>
 
 

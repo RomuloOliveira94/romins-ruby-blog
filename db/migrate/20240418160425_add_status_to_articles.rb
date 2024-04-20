@@ -1,5 +1,5 @@
-class AddStatusToArticles < ActiveRecord::Migration[7.1]
+class AddStatusToPhrases < ActiveRecord::Migration[7.1]
   def change
-    add_column :articles, :status, :string , default: 'public'
+    add_column :phrases, :status, :string , default: 'public'
   end
 end

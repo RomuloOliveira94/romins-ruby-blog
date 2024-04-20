@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     Rails.logger.info("Home page accessed") do
       "Bem vindo ao romin blog!"
     end
-    @articles = Article.page(params[:page]).per(5)
+    @phrases = Phrase.page(params[:page]).per(5)
   end
 
 end

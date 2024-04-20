@@ -1,4 +1,4 @@
-  <%= form_with model: [@article, @article.comments.build] do |form|%>
+  <%= form_with model: [@phrase, @phrase.comments.build] do |form|%>
     <p>
       <%= form.label "Name", class: "font-semibold text-md" %><br>
       <%= form.text_field :commenter, class: "input input-bordered w-full max-w-xs", placeholder: "name" %>
