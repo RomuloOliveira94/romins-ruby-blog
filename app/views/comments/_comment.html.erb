@@ -1,14 +1,14 @@
-<section class="flex justify-between items-center gap-3">    
-        <p class="text-start">
-            <strong class="text-md"><%= comment.commenter %></strong> says:<br>
-            <span class="font-light text-md"><%= comment.body %></span>
-        </p>
-        <p class="bg-red-500 h-7 w-7 rounded-full text-center text-black font-bold flex items-center justify-center">
-            <%= link_to "x", [comment.phrase, comment], data: {
+<section class="flex justify-between items-center gap-3">
+  <p class="text-start">
+    <strong class="text-md"><%= comment.commenter %></strong> says:<br>
+    <span class="font-light text-md"><%= comment.body %></span>
+  </p>
+  <p class="bg-red-500 h-7 w-7 rounded-full text-center text-black font-bold flex items-center justify-center">
+    <%= link_to "x", [comment.phrase, comment], data: {
                         turbo_method: :delete,
                         turbo_confirm: "Are you sure?"
                         }, class: "self-center"
             %>
-        </p>
+  </p>
 </section>
 <hr>

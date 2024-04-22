@@ -1,29 +1,26 @@
 <section class="grid gap-3 mb-2">
   <%= form_with model: phrase do |form| %>
-      <div>
-        <%= form.label "Title", class: "text-lg font-bold" %><br>
-        <%= form.text_field :title, class: "input input-bordered w-full max-w-xs"  %>
-        <% phrase.errors.full_messages_for(:title).each do |message| %>
-          <div><%= message %></div>
-        <% end %>
-      </div>
-
-      <div>
-        <%= form.label "Phrase", class: "text-lg font-bold" %><br>
-        <%= form.text_area :body, class: "textarea textarea-bordered textarea-md w-full max-w-xs" %><br>
-        <% phrase.errors.full_messages_for(:body).each do |message| %>
-          <div><%= message %></div>
-        <% end %>
-      </div>
-      
-      <div>
-        <%= form.label :status %><br>
-        <%= form.select :status, Visible::VALID_STATUSES, selected: phrase.status || 'public' %>
-      </div>
-
-      <div class="btn btn-success w-full mt-2">
-        <%= form.submit %>
-      </div>
+    <div>
+      <%= form.label "Title", class: "text-lg font-bold" %><br>
+      <%= form.text_field :title, class: "input input-bordered w-full max-w-xs"  %>
+      <% phrase.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label "Phrase", class: "text-lg font-bold" %><br>
+      <%= form.text_area :body, class: "textarea textarea-bordered textarea-md w-full max-w-xs" %><br>
+      <% phrase.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :status %><br>
+      <%= form.select :status, Visible::VALID_STATUSES, selected: phrase.status || 'public' %>
+    </div>
+    <div class="btn btn-success w-full mt-2">
+      <%= form.submit %>
+    </div>
   <% end %>
   <%= link_to "Cancelar", phrases_path(phrase), class: "btn btn-error" %>
 </section>

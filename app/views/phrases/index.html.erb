@@ -2,19 +2,19 @@
   <div class="grid gap-5">
     <h1 class="text-2xl font-bold">All phrases</h1>
     <ul class="grid gap-2 text-md">
-        <% @phrases.each do |phrase| %>
-          <% unless phrase.archived? %>
-            <li>     
-                <%= link_to phrase.title, phrase, class: "link" %>
-                -
-                <%= link_to "Edit", edit_phrase_path(phrase), class: "link" %>
-            </li>
-          <% end %>
+      <% @phrases.each do |phrase| %>
+        <% unless phrase.archived? %>
+          <li>
+            <%= link_to phrase.title, phrase, class: "link" %>
+            -
+            <%= link_to "Edit", edit_phrase_path(phrase), class: "link" %>
+          </li>
         <% end %>
+      <% end %>
     </ul>
   </div>
   <div class="grid gap-2">
-    <h2 class="text-xl font-semibold">Create new phrase</h2>    
+    <h2 class="text-xl font-semibold">Create new phrase</h2>
     <%= link_to "New Phrase", new_phrase_path, class: "btn btn-error" %>
   </div>
 </section>
