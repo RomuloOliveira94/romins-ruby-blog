@@ -1,24 +1,5 @@
-# README
+# Romins Ruby Phrases
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![image](https://github.com/RomuloOliveira94/romins-ruby-blog/assets/99622544/8c9f46df-923d-4db7-8ecb-c2326558f6eb)
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
